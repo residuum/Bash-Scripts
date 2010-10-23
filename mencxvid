@@ -1,0 +1,22 @@
+#! /bin/bash
+
+# encodes $1 to xvid: $2
+FILENAME=${1%.*}
+FILEEXT="avi"
+if [ $2 ]
+then 
+	NEWFILE=$2
+else
+	NEWFILE=${FILENAME}"."${FILEEXT}
+fi
+
+FILEPART=${NEWFILE}
+COUNT=1
+while [ -e $NEWFILE ]
+do
+	NEWFILE=${COUNT}"-"${FILEPART}
+	((COUNT++))
+done 
+
+mencoder -o /dev/null -ovc xvid -xvidencopts pass=1 -vf scale=720:576 -oac mp3lame $1
+mencoder -o $NEWFILE -ovc xvid -xvidencopts pass=2:bitrate=1109 -vf scale=720:576 -oac mp3lame $1

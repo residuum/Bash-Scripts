@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# encodes sequence of jpg from folder $1 with audiofile $2 to avi movie $3
+
+mencoder -mf fps=25 -ovc copy -oac copy -audiofile $2 -o $3 mf://$1*.jpg
+#mencoder -mf fps=25 -ovc lavc -lavcopts vcodec=ljpeg:vqscale=1 -oac copy -audiofile $2 -o $3 mf://$1*.jpg

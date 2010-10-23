@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# encodes $1 to h264: $2
+FILENAME=${1%.*}
+FILEEXT="avi"
+if [ $2 ]
+then 
+	NEWFILE=$2
+else
+	NEWFILE=${FILENAME}"."${FILEEXT}
+fi
+
+FILEPART=${NEWFILE}
+COUNT=1
+while [ -e $NEWFILE ]
+do
+	NEWFILE=${COUNT}"-"${FILEPART}
+	((COUNT++))
+done 
+
+mencoder -o /dev/null -ovc x264 -x264encopts bitrate=2000:subq=5:bframes=3:b_pyramid:weight_b:turbo=1:threads=auto:pass=1 -vf scale=800:600 -oac mp3lame $1
+mencoder -o /dev/null -ovc x264 -x264encopts bitrate=2000:subq=5:8x8dct:frameref=2:bframes=3:b_pyramid:weight_b:threads=auto:pass=3 -vf scale=800:600 -oac mp3lame $1
+mencoder -o $NEWFILE -ovc x264 -x264encopts bitrate=2000:subq=5:8x8dct:frameref=2:bframes=3:b_pyramid:weight_b:threads=auto:pass=3 -vf scale=800:600 -oac mp3lame $1
