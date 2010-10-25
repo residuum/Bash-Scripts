@@ -1,10 +1,8 @@
 Some bash scripts that I use:
 
-- dualscreen: script to enable dual screen without a gui for a laptop.
+- dualscreen: script to enable dual using xrandr.
 - mench264: Transcode video to H.264 with mencoder in 3 passes.
 - mencjpeg: Encode a series of jpeg pictures to a movie with mencoder.
-- mencmjpeg: Transcode video to MJPEG with mencoder (for usage with Pd/GEM)
-- mencxvid: Transcode video to XVID with mencoder in 2 passes.
-- mencjpeg: Encode a series of jpeg pictures to a movie with mencoder.
-- mencmjpeg: Transcode video to MJPEG with mencoder (for usage with Pd/GEM)
+- mencmjpeg: Transcode video to MJPEG with mencoder using the nosound option 
+  (for usage with Pd/GEM, expecially Denno Senshi Porygon).
 - mencxvid: Transcode video to XVID with mencoder in 2 passes.
