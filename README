@@ -9,3 +9,7 @@ Some bash scripts that I use:
   for usage with Pd/GEM, expecially Denno Senshi Porygon, for the reasoning
   see http://www.mail-archive.com/pd-list@iem.at/msg37332.html.
 - mencxvid: Transcode video to XVID with mencoder in 2 passes.
+- mknoise and stopnoise: Starts and stops jackd, qjackctl and audio programs
+  in one command. Takes text files as input for the additional audio programs,
+  each program on a seperate line including command line arguments for startup,
+  cf. mknoise-sample.

@@ -1,0 +1,2 @@
+pdextended -rt -jack -alsamidi -inchannels 2 -outchannels 8
+specimen
