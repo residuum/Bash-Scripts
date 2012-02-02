@@ -18,6 +18,6 @@ do
 	((COUNT++))
 done 
 
-mencoder -o /dev/null -ovc x264 -x264encopts bitrate=2000:subq=5:bframes=3:b_pyramid:weight_b:turbo=1:threads=auto:pass=1 -vf scale=800:600 -oac mp3lame $1
-mencoder -o /dev/null -ovc x264 -x264encopts bitrate=2000:subq=5:8x8dct:frameref=2:bframes=3:b_pyramid:weight_b:threads=auto:pass=3 -vf scale=800:600 -oac mp3lame $1
-mencoder -o $NEWFILE -ovc x264 -x264encopts bitrate=2000:subq=5:8x8dct:frameref=2:bframes=3:b_pyramid:weight_b:threads=auto:pass=3 -vf scale=800:600 -oac mp3lame $1
+mencoder -o /dev/null -ovc x264 -x264encopts bitrate=2000:subq=5:8x8dct:framref=2:bframes=3:b_pyramid:weight_b:pass=1 -vf scale=800:600 -oac mp3lame $1
+mencoder -o /dev/null -ovc x264 -x264encopts bitrate=2000:subq=5:8x8dct:frameref=2:bframes=3:b_pyramid:weight_b:pass=3 -vf scale=800:600 -oac mp3lame $1
+mencoder -o $NEWFILE -ovc x264 -x264encopts bitrate=2000:subq=6:8x8dct:frameref=2:bframes=3:b_pyramid:weight_b:pass=3 -vf scale=800:600 -oac mp3lame $1

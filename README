@@ -2,6 +2,8 @@ Some bash scripts that I use:
 
 - dualscreen: script to enable dual using xrandr (for window managers that
   do not have a way to do that via a GUI).
+- touchscreen: script to start florence (on screen keyboard) or kills all
+  running processes of it. Sets keyboard layout to German as well.
 - mench264: Transcode video to H.264 with mencoder in 3 passes.
 - mencjpeg: Encode a series of jpeg pictures to an MJPEG movie with mencoder. 
   Useful for exported frames from an animation application like Blender.

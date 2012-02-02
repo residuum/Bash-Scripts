@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# starts florence
+FLORENCE=florence
+if [ "$(pidof $FLORENCE)" ]
+then
+	killall florence
+else
+	setxkbmap de
+	$FLORENCE&
+fi
